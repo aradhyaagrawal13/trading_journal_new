@@ -28,7 +28,7 @@ export default function LearningPage() {
 
   const totalMins = learningEntries.reduce((s, e) => s + e.duration, 0);
   const weekMins = learningEntries.filter(e => last7.includes(e.date)).reduce((s, e) => s + e.duration, 0);
-  const topics = [...new Set(learningEntries.map(e => e.topic))].length;
+  const topics = Array.from(new Set(learningEntries.map(e => e.topic))).length;
 
   const dailyData = last7.map(d => ({
     day: format(new Date(d), "EEE"),
