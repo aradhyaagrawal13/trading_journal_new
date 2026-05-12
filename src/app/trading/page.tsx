@@ -61,7 +61,7 @@ export default function TradingPage() {
     wins: trades.filter(t => t.strategy === s && (t.pnl ?? 0) > 0).length,
   })).filter(s => s.trades > 0);
 
-  const pnlByDay = [...new Set(closedTrades.map(t => t.date))].slice(-14).map(d => ({
+  const pnlByDay = Array.from(new Set(closedTrades.map(t => t.date))).slice(-14).map(d => ({
     day: d.slice(5),
     pnl: Math.round(closedTrades.filter(t => t.date === d).reduce((s, t) => s + (t.pnl ?? 0), 0)),
   }));
