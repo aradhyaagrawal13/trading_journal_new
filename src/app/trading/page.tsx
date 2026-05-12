@@ -32,7 +32,7 @@ export default function TradingPage() {
 
   const save = () => {
     if (!form.asset || !form.entry) return;
-    const pnl = form.exit && form.status === "closed"
+    const pnl = form.exit && form.status == "closed"
       ? (form.direction === "long" ? form.exit - form.entry : form.entry - form.exit) * form.quantity
       : undefined;
     if (editId) {
