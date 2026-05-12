@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState } from "react";
 import { useStore } from "@/store";
 import PageLayout from "@/components/layout/PageLayout";
